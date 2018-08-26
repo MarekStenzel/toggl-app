@@ -1,16 +1,11 @@
-// import { Injectable } from '@angular/core';
-//
-// @Injectable()
-// export class AuthService {
-//   token: string;
-//
-//   constructor() {}
-//   loginUser(email: string, password: string) {
-//     this.email = email;
-//     this.password = password;
-//     console.log(email, password);
-//   }
-//
-//
-//
-// }
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+
+
+@Injectable()
+export class AuthService{
+  constructor(private http: Http) {}
+  loginUser(usersample: any[]) {
+    return this.http.post('http://localhost:3000/users/login', usersample);
+  }
+}
