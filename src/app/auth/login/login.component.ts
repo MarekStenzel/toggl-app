@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {AuthService} from '../auth.service';
+import {faEnvelopeSquare} from '@fortawesome/free-solid-svg-icons/faEnvelopeSquare';
+import {faEye} from '@fortawesome/free-solid-svg-icons/faEye';
 
 @Component({
   selector: 'app-login',
@@ -9,29 +11,21 @@ import {AuthService} from '../auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  faEnvelopeSquare = faEnvelopeSquare;
+  faEye = faEye;
+
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
-
-  usersample = {
-    "email": "markos123@example.com",
-    "password": "password!"
-  };
-
   onLogin(form: NgForm) {
     const email = form.value.email;
     const password = form.value.password;
-    console.log(email, password);
-
-  }
-
-  onLogin2() {
-    this.authService.loginUser(this.usersample)
-      .subscribe(
-        (response) => console.log(response),
-        (error) => console.log(error)
-      );
+    this.authService.loginUser(email, password)
+        .subscribe(
+          (response) => console.log(response),
+          (error) => console.log(error)
+        );
   }
 
 }
