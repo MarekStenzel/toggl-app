@@ -23,11 +23,9 @@
 }
 
 
-.timer-front {
+.dashboard-container {
   display: flex;
   height: 66px;
   width: 50em;
-  background-color: white;
+  background-color: darkgray;
 }
-
-

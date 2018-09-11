@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import {AuthService} from '../auth.service';
-import {faEnvelopeSquare} from '@fortawesome/free-solid-svg-icons/faEnvelopeSquare';
-import {faEye} from '@fortawesome/free-solid-svg-icons/faEye';
 
 @Component({
   selector: 'app-login',
@@ -10,9 +8,6 @@ import {faEye} from '@fortawesome/free-solid-svg-icons/faEye';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-  faEnvelopeSquare = faEnvelopeSquare;
-  faEye = faEye;
 
   constructor(private authService: AuthService) { }
 

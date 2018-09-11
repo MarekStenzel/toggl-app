@@ -17,6 +17,9 @@ import { AppSiteRoutingModule } from './appsite/appsite-routing.module';
 import { AppsiteService } from './appsite/appsite.service';
 import { SidebarComponent } from './appsite/sidebar/sidebar.component';
 import {AuthInterceptor} from './shared/auth.interceptor';
+import { ProjectsComponent } from './appsite/projects/projects.component';
+import { HelpComponent } from './appsite/help/help.component';
+import { DashboardComponent } from './appsite/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import {AuthInterceptor} from './shared/auth.interceptor';
     StartComponent,
     AppsiteComponent,
     TimerComponent,
-    SidebarComponent
+    SidebarComponent,
+    ProjectsComponent,
+    HelpComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

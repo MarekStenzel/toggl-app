@@ -1,6 +1,6 @@
 .form-group {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -15,3 +15,48 @@
   justify-content: center;
   align-content: stretch;
 }
+
+.Button {
+  display: flex;
+  justify-content: center;
+}
+
+.form-control{
+  height: 40px;
+  padding: 0px;
+  font-size: 30px;
+  margin: 5px 0;
+}
+
+.form-control::-webkit-input-placeholder {
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: flex;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: gray;
+}
+
+/*.form-control::-moz-placeholder {*/
+/*font-family: FontAwesome;*/
+/*font-weight: normal;*/
+/*overflow: visible;*/
+/*vertical-align: top;*/
+/*display: flex;*/
+/*padding-left: 5px;*/
+/*padding-top: 2px;*/
+/*color: hsl(9, 40%, 60%);*/
+/*}*/
+
+/*.form-control::-ms-input-placeholder {*/
+/*font-family: FontAwesome;*/
+/*font-weight: normal;*/
+/*overflow: visible;*/
+/*vertical-align: top;*/
+/*display: flex;*/
+/*padding-left: 5px;*/
+/*padding-top: 2px;*/
+/*color: hsl(9, 40%, 60%);*/
+/*}*/
