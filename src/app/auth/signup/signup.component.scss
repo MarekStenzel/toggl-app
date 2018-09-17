@@ -1,0 +1,92 @@
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+
+}
+
+.up-nav{
+  display: flex;
+  height: 55px;
+  width: 1366px;
+  background: turquoise;
+}
+
+.down-nav {
+  display: flex;
+  height: 713px;
+  width: 1366px;
+  background: darkturquoise;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-content: stretch;
+}
+
+.Button {
+  display: flex;
+  justify-content: center;
+  flex-grow: 30;
+}
+
+.form-control{
+  height: 40px;
+  padding: 0px;
+  font-size: 30px;
+  margin: 5px 0;
+}
+
+.form-control::-webkit-input-placeholder {
+  font-family: FontAwesome;
+  font-weight: normal;
+  overflow: visible;
+  vertical-align: top;
+  display: flex;
+  padding-left: 5px;
+  padding-top: 2px;
+  color: gray;
+}
+
+/*.form-control::-moz-placeholder {*/
+/*font-family: FontAwesome;*/
+/*font-weight: normal;*/
+/*overflow: visible;*/
+/*vertical-align: top;*/
+/*display: flex;*/
+/*padding-left: 5px;*/
+/*padding-top: 2px;*/
+/*color: hsl(9, 40%, 60%);*/
+/*}*/
+
+/*.form-control::-ms-input-placeholder {*/
+/*font-family: FontAwesome;*/
+/*font-weight: normal;*/
+/*overflow: visible;*/
+/*vertical-align: top;*/
+/*display: flex;*/
+/*padding-left: 5px;*/
+/*padding-top: 2px;*/
+/*color: hsl(9, 40%, 60%);*/
+/*}*/
+
+.signup {
+  margin: auto;
+}

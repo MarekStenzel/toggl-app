@@ -1,14 +1,11 @@
-<nav class="navbar navbar-default" *ngIf="isLoggedIn$ | async">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a routerLink="/" class="navbar-brand">Toggl</a>
-    </div>
-    <div class="navbar-default">
-      <!--<ul class="nav navbar-nav navbar-right">-->
-        <a routerLinkActive="active"><a routerLink="/login">Login</a></a>
-      <a routerLinkActive="active"><a routerLink="/signup"><b>Signup</b></a></a>
-      <!--</ul>-->
-    </div>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+<div class="menu">
+  <div class="toggl-logo"><i class="fas fa-power-off"></i><a class="toggl-btn" href="/"><b>toggl</b></a></div>
+  <div class="navigation">
+    <li><a href="/">Features</a></li>
+    <li><a href="/login">Login</a></li>
+    <li><a href="/signup">Signup</a></li>
   </div>
-</nav>
+</div>
 

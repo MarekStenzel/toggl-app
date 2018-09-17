@@ -5,23 +5,23 @@
 
 .left-nav{
   display: flex;
-  height: 800px;
-  width: 300px;
+  height: 675px;
+  width: 185px;
   background: #323232;
 }
 
 .right-pane {
   display: flex;
-  height: 800px;
-  width: 1180px;
+  height: 675px;
+  width: 1181px;
   background: lightgray;
 }
 
 .react-viewport-container {
   display: flex;
   flex-direction: column;
-}
 
+}
 
 .dashboard-container {
   display: flex;

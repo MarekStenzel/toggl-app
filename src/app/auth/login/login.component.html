@@ -1,20 +1,31 @@
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-<div class="row">
-  <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-    <form (ngSubmit)="onLogin(f)" #f="ngForm">
-      <div class="form-group">
-        <div class="flexFont"><h6>EMAIL ADDRESS</h6></div>
-        <div><input type="email" id="email" name="email" ngModel class="form-control" placeholder="&#61664;"></div>
-      </div>
-      <div class="form-group">
-        <div class="flexFont"><h6>PASSWORD</h6></div>
-        <div><input type="password" id="password" name="password" ngModel class="form-control" placeholder="&#61550;"></div>
-        </div>
-      <div class="Button">
-      <button class="btn btn-primary" type="submit">Login</button>
-      </div>
-    </form>
+<div class="page-wrapper">
+
+  <div class="up-nav">
+    <div class="menu">
+    <app-header></app-header>
+    </div>
+  </div>
+  <div class="down-nav">
+   <div class="login">
+     <div class="row">
+       <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+         <form (ngSubmit)="onLogin(f)" #f="ngForm">
+           <div class="form-group">
+             <div class="flexFont"><h6>EMAIL ADDRESS</h6></div>
+             <div><input type="email" id="email" name="email" ngModel class="form-control" placeholder="&#61664;"></div>
+           </div>
+           <div class="form-group">
+             <div class="flexFont"><h6>PASSWORD</h6></div>
+             <div><input type="password" id="password" name="password" ngModel class="form-control" placeholder="&#61550;"></div>
+           </div>
+           <div class="Button">
+             <button class="btn btn-primary" type="submit">Login</button>
+           </div>
+         </form>
+       </div>
+     </div>
+   </div>
   </div>
 </div>
-

@@ -1,0 +1,65 @@
+.react-viewport-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+}
+
+.manage-area{
+  color: darkgray;
+  font-size: 80%;
+  padding-left: 1em;
+}
+
+.toggl-logo{
+  color: red;
+  padding-left: 1em;
+}
+
+.toggl-btn {
+  border: 2px solid #323232;
+  color: lightgray;
+  transition: .40s;
+  -webkit-transition: .40s;
+  text-decoration: none;
+  padding-left: 0.25em;
+}
+
+.timer-btn,
+.dashboard-btn,
+.reports-btn,
+.insights-btn,
+.savedreports-btn,
+.projects-btn,
+.clients-btn,
+.team-btn,
+.workspaces-btn,
+.tags-btn,
+.help-btn {
+  border: 2px solid #323232;
+  color: lightgray;
+  transition: .40s;
+  -webkit-transition: .40s;
+  padding-left: 1em;
+
+}
+
+.timer-btn:hover,
+.dashboard-btn:hover,
+.reports-btn:hover,
+.insights-btn:hover,
+.savedreports-btn:hover,
+.projects-btn:hover,
+.clients-btn:hover,
+.team-btn:hover,
+.workspaces-btn:hover,
+.tags-btn:hover,
+.help-btn:hover {
+  background: #323232;
+  color: white;
+  transition: .40s;
+  -webkit-transition: .40s;
+  text-decoration: none;
+  padding-left: 1em;
+}
+
+

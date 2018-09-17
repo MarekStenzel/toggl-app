@@ -3,20 +3,48 @@
 <div class="page-wrapper">
   <div class="left-nav">
   <app-sidebar></app-sidebar>
-</div>
+  </div>
 <div class="right-pane">
   <div class="right-pane-inner">
     <div class="react-viewport-container">
 
       <div class="timer-front">
-        <form>
-          <input type="text" tabindex="1" spellcheck="false" autocomplete="off" class="timer-input">
-        </form>
+        <div class="form-text">
+          <input type="text"
+                 placeholder="What have you done?"
+                 onfocus="this.placeholder=''"
+                 onblur="this.placeholder='What have you done?'"
+                 [(ngModel)]="task"
+                 [value]="task" class="form-control">
+        </div>
+        <div class="project-creator">
+          <a class="projects-btn" href="#"><i class="fas fa-plus"></i>   Create a project</a>
+        </div>
+        <div class="tags">
+          <a class="tags-btn" href="#"><i class="fas fa-tag"></i></a>
+        </div>
+        <div class="datetimerange-container">
+          <input placeholder="{{timeElapsed}}"
+                 onfocus="this.placeholder=''"
+                 onblur="this.placeholder='0:00:00'"
+                 [owlDateTimeTrigger]="dt10" [owlDateTime]="dt10"
+                 [selectMode]="'range'"  [(ngModel)]="taskTime" [value]="taskTime" class="form-control">
+          <owl-date-time #dt10></owl-date-time>
+        </div>
+        <div class="timerstartstop-button">
+          <button (click)='startTimer()'>Start Timer</button>
+          <button (click)='pauseTimer()'>Pause</button>
+          <p>{{timeElapsed}} seconds</p>
+        </div>
       </div>
 
-      <div class="timer-container">
-
+      <div class="timer-bottom">
+        <div class="example-wrapper">
+          <owl-stop-watch [type]="'digital'" (watchLap)="lap($event)"></owl-stop-watch>
+        </div>
       </div>
+
+
     </div>
   </div>
 </div>

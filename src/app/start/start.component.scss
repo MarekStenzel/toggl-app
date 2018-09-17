@@ -1,3 +1,28 @@
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu {
+  display: flex;
+
+}
+
+.up-nav{
+  display: flex;
+  height: 55px;
+  width: 1366px;
+  background: turquoise;
+}
+
+.down-nav {
+  display: flex;
+  height: 713px;
+  width: 1366px;
+  background: darkturquoise;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -19,6 +44,7 @@
 .Button {
   display: flex;
   justify-content: center;
+  flex-grow: 30;
 }
 
 .form-control{
@@ -60,3 +86,9 @@
 /*padding-top: 2px;*/
 /*color: hsl(9, 40%, 60%);*/
 /*}*/
+
+.start {
+  margin: auto;
+  font-size: 400%;
+}
+
