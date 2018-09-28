@@ -54,7 +54,7 @@ import {OwlStopWatchModule} from 'owl-ng';
   providers: [
     AuthService,
     AppsiteService,
-    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
   ],
   bootstrap: [AppComponent]
 })

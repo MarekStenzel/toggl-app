@@ -9,41 +9,85 @@
     <div class="react-viewport-container">
 
       <div class="timer-front">
-        <div class="form-text">
-          <input type="text"
-                 placeholder="What have you done?"
-                 onfocus="this.placeholder=''"
-                 onblur="this.placeholder='What have you done?'"
-                 [(ngModel)]="task"
-                 [value]="task" class="form-control">
+        <div class="timer-left"><ng-container *ngIf="automatic">
+          <div class="form-text">
+            <input class="input1_1" type="text"
+                   placeholder="What are you working on?"
+                   onfocus="this.placeholder=''"
+                   onblur="this.placeholder='What are you working on?'"
+                   [(ngModel)]="task"
+                   [value]="task" class="form-control">
+          </div>
+          <div class="tags">
+            <a class="tags-btn" href="#"><i class="fas fa-tag"></i></a>
+          </div>
+          <div class="datetimerange-container">
+            <input class="input1_2" placeholder="{{timestampElapsed}}"
+                   onfocus="this.placeholder"
+                   onblur="this.placeholder"
+                   [owlDateTimeTrigger]="dt10" [owlDateTime]="dt10"
+                   [selectMode]="'range'"  [(ngModel)]="taskTime" [value]="taskTime" (change)="'text'" class="form-control">
+            <owl-date-time #dt10></owl-date-time>
+          </div>
+          <div class="timerstartstop-button">
+            <div class="start-btn" *ngIf="!task_in_progress" (click)='startTimer()'><i class="fa fa-play-circle" aria-hidden="true"></i></div>
+            <div class="stop-btn" *ngIf="task_in_progress" (click)='pauseTimer()'><i class="fa fa-stop-circle" aria-hidden="true"></i></div>
+          </div><p></p></ng-container>
+
+          <ng-container *ngIf="!automatic">
+            <div class="form-text-2">
+              <input class="input2_1" type="text"
+                     placeholder="What have you done?"
+                     onfocus="this.placeholder=''"
+                     onblur="this.placeholder='What have you done?'"
+                     [(ngModel)]="task"
+                     [value]="task" class="form-control">
+            </div>
+            <div class="tags">
+              <a class="tags-btn" href="#"><i class="fas fa-tag"></i></a>
+            </div>
+            <div class="datetimerange-container-2">
+              <input class="input2_2" placeholder="{{this.nowTime}}"
+                     onfocus="this.placeholder"
+                     onblur="this.placeholder"
+                     [owlDateTimeTrigger]="dt10" [owlDateTime]="dt10"
+                     [(ngModel)]="taskTime2" [value]="taskTime2"  class="form-control">
+              <owl-date-time #dt10></owl-date-time>
+            </div>
+            <div class="datetimerange-container-21">
+              <input class="input2_3" placeholder="{{this.nowTime}}"
+                     onfocus="this.placeholder"
+                     onblur="this.placeholder"
+                     [(ngModel)]="taskTime3" [value]="taskTime3"  class="form-control">
+            </div>
+            <div class="timerstartstop-button">
+              <div class="manual-btn" (click)='addProject_3()'><i class="fas fa-check-circle"></i></div>
+            </div>
+            <p></p>
+          </ng-container>
+
         </div>
-        <div class="project-creator">
-          <a class="projects-btn" href="#"><i class="fas fa-plus"></i>   Create a project</a>
-        </div>
-        <div class="tags">
-          <a class="tags-btn" href="#"><i class="fas fa-tag"></i></a>
-        </div>
-        <div class="datetimerange-container">
-          <input placeholder="{{timeElapsed}}"
-                 onfocus="this.placeholder=''"
-                 onblur="this.placeholder='0:00:00'"
-                 [owlDateTimeTrigger]="dt10" [owlDateTime]="dt10"
-                 [selectMode]="'range'"  [(ngModel)]="taskTime" [value]="taskTime" class="form-control">
-          <owl-date-time #dt10></owl-date-time>
-        </div>
-        <div class="timerstartstop-button">
-          <button (click)='startTimer()'>Start Timer</button>
-          <button (click)='pauseTimer()'>Pause</button>
-          <p>{{timeElapsed}} seconds</p>
+        <div class="timer-right">
+          <div class="logic-buttons">
+            <div class="timer_mode-btn" (click)="timerMode()"><label title="Timer Mode"><i class="fa fa-clock" aria-hidden="true"></i></label></div>
+            <div class="manual_mode-btn" (click)="manualMode()"><label title="Manual Mode"><i class="fas fa-list"></i></label></div>
+          </div>
         </div>
       </div>
 
       <div class="timer-bottom">
-        <div class="example-wrapper">
-          <owl-stop-watch [type]="'digital'" (watchLap)="lap($event)"></owl-stop-watch>
+        <div class="chart-selector-wrapper">
+          <p></p>
+          <a class="today-btn">TODAY: {{sumTimestampElapsed}}</a>
+        </div>
+        <div class="projects-list" *ngFor="let project of projects">
+          <div class="projects-list-container">
+            <a class="task">{{project.task}}</a>
+            <!--<a class="time">{{secondsToDate(project.hours*3600+project.minutes*60)}}</a>-->
+            <a class="time">hours: {{project.hours}}, minutes: {{project.minutes}}</a>
+          </div>
         </div>
       </div>
-
 
     </div>
   </div>

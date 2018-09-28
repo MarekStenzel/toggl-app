@@ -20,7 +20,6 @@
 .react-viewport-container {
   display: flex;
   flex-direction: column;
-
 }
 
 .timer-front {
@@ -30,35 +29,168 @@
   background-color: white;
 }
 
+.timer-left {
+  display: flex;
+  height: 66px;
+  width: 1153px;
+  background-color: white;
+  justify-content: space-between;
+}
+
+.timer-right {
+  display: flex;
+  height: 66px;
+  width: 28px;
+  background-color: white;
+}
+
+
 .timer-bottom {
   display: flex;
   height: 609px;
   width: 1181px;
-  background-color: gray;
+  background-color: #fafbfc;
+  flex-direction: column;
+  overflow: auto;
 }
 
-.example-timer {
+.form-text {
+  width: 856px;
+  height: 66px;
+  padding-top: 10px;
+}
+
+.form-text-2 {
+  width: 670.5px;
+  height: 66px;
+  padding-top: 12px;
+}
+
+.datetimerange-container {
+  width: 95px;
+  height: 66px;
+  padding-top: 12px;
+}
+
+.datetimerange-container-2 {
+  width: 253px;
+  height: 66px;
+  padding-top: 12px;
+}
+
+.timerstartstop-button {
   display: flex;
-  margin-bottom: 2rem;
 }
 
-.example-btn {
-  padding: 1em;
-  width: 100%;
-  max-width: 8em;
-  height: 3em;
-  background: #ffffff;
-  color: #3f51b5;
-  border: 1px solid #3f51b5;
-  margin: .1em;
-  text-decoration: none !important;
-  cursor: pointer;
-  text-align: center;
-  zoom: 1;
-  display: inline-block;
-  outline: none;
-  border-radius: 3px;
-  -webkit-appearance: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-tap-highlight-color: transparent;
+.start-btn,
+.manual-btn{
+  color: #4bc800;
+  width: 42px;
+  height: 42px;
+  font-size: 42px;
 }
+
+.stop-btn {
+  color: #e20505;
+  width: 42px;
+  height: 42px;
+  font-size: 42px;
+}
+
+.tags-btn {
+  color: gray;
+  width: 32px;
+  height: 32px;
+  font-size:22px;
+}
+
+.tags {
+  padding-top: 12px;
+}
+
+.timer_mode-btn{
+  color: #4bc800;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  transition: .40s;
+  -webkit-transition: .40s;
+}
+
+.timer_mode-btn:hover{
+  color: lightgray;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  transition: .40s;
+  -webkit-transition: .40s;
+}
+
+.manual_mode-btn{
+  color: lightgray;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  transition: .40s;
+  -webkit-transition: .40s;
+}
+
+.manual_mode-btn:hover{
+  color: #4bc800;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  transition: .40s;
+  -webkit-transition: .40s;
+}
+
+input {
+  border: none;
+  outline: none !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  font-size: 18px;
+}
+
+input:focus {
+  border: none;
+  outline: none !important;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.projects-list-container {
+  display: flex;
+  background-color: white;
+  width: 1181px;
+  height: 50px;
+  border-style: none none solid none;
+  border-width: 1px;
+  border-color: #f3f3f3;
+}
+.chart-selector-wrapper {
+  background-color: #fafbfc;
+  width: 1181px;
+  height: 100px;
+  border-style: solid none none none;
+  border-width: 1px;
+  border-color: #f3f3f3;
+}
+.today-btn {
+  padding-left: 20px;
+  font-size: 12px;
+}
+
+.task {
+  padding-left: 20px;
+  padding-top: 12px;
+}
+
+.time {
+  margin-left: auto;
+  padding-right: 90px;
+  padding-top: 12px;
+}
+
