@@ -5,7 +5,7 @@ import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
 
 @Injectable()
 export class AuthService{
-  constructor(private httpClient: HttpClient,) {}
+  constructor(private httpClient: HttpClient) {}
   token: string;
 
   private loggedIn = new BehaviorSubject<boolean>(false);
@@ -18,7 +18,7 @@ export class AuthService{
     const user = {email, password};
     // return this.httpClient.post('http://localhost:3000/users/login', user);
 
-    const req = new HttpRequest('POST', 'http://localhost:3000/users/login', user, {reportProgress: false, withCredentials: true});
+    // const req = new HttpRequest('POST', 'http://localhost:3000/users/login', user, {reportProgress: false, withCredentials: true});
     const req2 = this.httpClient.post('http://localhost:3000/users/login',  user);
     this.loggedIn.next(true);
     return req2;

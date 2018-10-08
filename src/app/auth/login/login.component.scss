@@ -9,7 +9,7 @@
 
 }
 
-.up-nav{
+.up-nav {
   display: flex;
   height: 55px;
   width: 1366px;
@@ -21,12 +21,15 @@
   height: 713px;
   width: 1366px;
   background: darkturquoise;
+  justify-content: center;
+  flex-direction: row-reverse;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 330px
 }
 
 .row {
@@ -88,5 +91,37 @@
  /*}*/
 
 .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: auto;
+  background-color: white;
+  height: 334px;
+  width: 471px;
+  border-radius: 10px
+}
+
+.flexFont {
+  font-size: 70%;
+}
+
+#email {
+  background-color: #faffbd;
+  outline: none !important;
+  box-shadow: none;
+
+}
+
+#email:focus {
+  border-color: #88cf8f;
+}
+
+#password {
+  background-color: #faffbd;
+  outline: none !important;
+  box-shadow: none;
+}
+
+#password:focus {
+  border-color: #88cf8f;
 }

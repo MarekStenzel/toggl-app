@@ -19,10 +19,31 @@ import { AuthInterceptor } from './shared/auth.interceptor';
 import { ProjectsComponent } from './appsite/projects/projects.component';
 import { HelpComponent } from './appsite/help/help.component';
 import { DashboardComponent } from './appsite/dashboard/dashboard.component';
-import {OwlDateTimeModule, OwlNativeDateTimeModule} from 'ng-pick-datetime';
+import {OWL_DATE_TIME_FORMATS, OWL_DATE_TIME_LOCALE, OwlDateTimeModule, OwlNativeDateTimeModule} from 'ng-pick-datetime';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {OwlStopWatchModule} from 'owl-ng';
 
+
+
+//
+// export const MY_MOMENT_FORMATS = {
+//   parseInput: 'l LT',
+//   fullPickerInput: 'HH:mm M/DD',
+//   datePickerInput: 'l',
+//   timePickerInput: 'LT',
+//   monthYearLabel: 'MMM YYYY',
+//   dateA11yLabel: 'LL',
+//   monthYearA11yLabel: 'MMMM YYYY',
+// };
+
+export const MY_NATIVE_FORMATS = {
+  fullPickerInput: {hour: 'numeric', minute: 'numeric', month: '2-digit', day: '2-digit' },
+  datePickerInput: {year: 'numeric', month: 'numeric', day: 'numeric'},
+  timePickerInput: {hour: 'numeric', minute: 'numeric'},
+  monthYearLabel: {year: 'numeric', month: 'short'},
+  dateA11yLabel: {year: 'numeric', month: 'long', day: 'numeric'},
+  monthYearA11yLabel: {year: 'numeric', month: 'long'},
+};
 
 
 @NgModule({
@@ -54,7 +75,10 @@ import {OwlStopWatchModule} from 'owl-ng';
   providers: [
     AuthService,
     AppsiteService,
-    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
+    {provide: OWL_DATE_TIME_LOCALE, useValue: 'pl'},
+    {provide: OWL_DATE_TIME_FORMATS, useValue: MY_NATIVE_FORMATS},
+
   ],
   bootstrap: [AppComponent]
 })

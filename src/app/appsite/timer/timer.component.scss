@@ -73,9 +73,29 @@
 }
 
 .datetimerange-container-2 {
-  width: 253px;
+  width: 128px;
   height: 66px;
   padding-top: 12px;
+}
+
+.datetimerange-container-3 {
+  width: 85px;
+  height: 66px;
+  padding-top: 12px;
+}
+
+.arrow {
+  padding-top: 20px;
+  color: lightgray;
+}
+
+.input2_1 {
+  width: 128px;
+  height: 36px;
+}
+.input2_2 {
+  width: 80px;
+  height: 36px;
 }
 
 .timerstartstop-button {
@@ -98,7 +118,7 @@
 }
 
 .tags-btn {
-  color: gray;
+  color: lightgray;
   width: 32px;
   height: 32px;
   font-size:22px;
@@ -106,6 +126,7 @@
 
 .tags {
   padding-top: 12px;
+  color: #b4b5b5;
 }
 
 .timer_mode-btn{
@@ -117,8 +138,17 @@
   -webkit-transition: .40s;
 }
 
-.timer_mode-btn:hover{
+.timer_mode-btn-2{
   color: lightgray;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  transition: .40s;
+  -webkit-transition: .40s;
+}
+
+.timer_mode-btn-2:hover{
+  color: #4bc800;
   width: 28px;
   height: 28px;
   font-size: 18px;
@@ -128,6 +158,15 @@
 
 .manual_mode-btn{
   color: lightgray;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  transition: .40s;
+  -webkit-transition: .40s;
+}
+
+.manual_mode-btn-2{
+  color: #4bc800;
   width: 28px;
   height: 28px;
   font-size: 18px;
@@ -161,7 +200,8 @@ input:focus {
   -webkit-box-shadow: none;
 }
 
-.projects-list-container {
+.projects-list-container,
+.projects-time-container {
   display: flex;
   background-color: white;
   width: 1181px;
@@ -169,7 +209,36 @@ input:focus {
   border-style: none none solid none;
   border-width: 1px;
   border-color: #f3f3f3;
+
+  input {
+    padding-bottom: 20px;
+  }
 }
+
+.time-task {
+  padding-top: 12px;
+  padding-left: 20px;
+}
+
+.projects-list-container:hover  {
+  background-color: #fafbfc;
+  .play-btn,
+  .ellipsis,
+  .tags-mini{
+    color: #b4b5b5;
+  }
+  .play-btn:hover,
+  .ellipsis:hover{
+    color: #6f6f6f;
+  }
+  input {
+    padding-bottom: 20px;
+    background-color: #fafbfc;
+    //background-color: white;
+    height: 38px;
+  }
+}
+
 .chart-selector-wrapper {
   background-color: #fafbfc;
   width: 1181px;
@@ -181,11 +250,26 @@ input:focus {
 .today-btn {
   padding-left: 20px;
   font-size: 12px;
+  color: #7b7b7b;
 }
 
 .task {
   padding-left: 20px;
   padding-top: 12px;
+}
+.tags-mini {
+  padding-top: 12px;
+  margin-left: auto;
+  padding-left: 620px;
+  color: white;
+}
+
+.date{
+  display: flex;
+  color: #7b7b7b;
+  margin-left: auto;
+  padding-top: 12px;
+  width: 200px;
 }
 
 .time {
@@ -194,3 +278,18 @@ input:focus {
   padding-top: 12px;
 }
 
+.play-btn {
+  padding-top: 12px;
+  padding-right: 25px;
+  color: white;
+}
+
+.play-btn:hover {
+  color: gray;
+}
+
+.ellipsis {
+  padding-top: 12px;
+  padding-right: 15px;
+  color: white;
+}

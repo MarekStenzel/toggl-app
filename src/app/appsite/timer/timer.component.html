@@ -19,14 +19,15 @@
                    [value]="task" class="form-control">
           </div>
           <div class="tags">
-            <a class="tags-btn" href="#"><i class="fas fa-tag"></i></a>
+            <a class="tags-btn"><i class="fas fa-tag"></i></a>
           </div>
           <div class="datetimerange-container">
             <input class="input1_2" placeholder="{{timestampElapsed}}"
                    onfocus="this.placeholder"
                    onblur="this.placeholder"
+                   onclick="this.automatic=false"
                    [owlDateTimeTrigger]="dt10" [owlDateTime]="dt10"
-                   [selectMode]="'range'"  [(ngModel)]="taskTime" [value]="taskTime" (change)="'text'" class="form-control">
+                   [selectMode]="'range'"  [(ngModel)]="taskTime" [value]="taskTime" class="form-control">
             <owl-date-time #dt10></owl-date-time>
           </div>
           <div class="timerstartstop-button">
@@ -47,21 +48,26 @@
               <a class="tags-btn" href="#"><i class="fas fa-tag"></i></a>
             </div>
             <div class="datetimerange-container-2">
-              <input class="input2_2" placeholder="{{this.nowTime}}"
+              <input class="input2_2" placeholder="{{this.nowTime | date:'dd.MM, HH:mm '}}"
                      onfocus="this.placeholder"
                      onblur="this.placeholder"
-                     [owlDateTimeTrigger]="dt10" [owlDateTime]="dt10"
-                     [(ngModel)]="taskTime2" [value]="taskTime2"  class="form-control">
-              <owl-date-time #dt10></owl-date-time>
+                     [owlDateTimeTrigger]="dt1" [owlDateTime]="dt1"
+                     [(ngModel)]="taskTime2" [value]="taskTime2" class="form-control">
+              <owl-date-time #dt1></owl-date-time>
             </div>
-            <div class="datetimerange-container-21">
-              <input class="input2_3" placeholder="{{this.nowTime}}"
+            <div class="arrow">
+              <a class="arrow"><i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="datetimerange-container-3">
+              <input class="input2_3" placeholder="{{this.nowTime | date:'HH:mm'}}"
                      onfocus="this.placeholder"
                      onblur="this.placeholder"
-                     [(ngModel)]="taskTime3" [value]="taskTime3"  class="form-control">
+                     [owlDateTimeTrigger]="dt2" [owlDateTime]="dt2"
+                     [(ngModel)]="taskTime3" [value]="taskTime3" (ngModelChange)="'selected'"  class="form-control">
+              <owl-date-time [pickerType]="'timer'"#dt2></owl-date-time>
             </div>
             <div class="timerstartstop-button">
-              <div class="manual-btn" (click)='addProject_3()'><i class="fas fa-check-circle"></i></div>
+              <div class="manual-btn" (click)='addProject_2()'><i class="fas fa-check-circle"></i></div>
             </div>
             <p></p>
           </ng-container>
@@ -69,8 +75,10 @@
         </div>
         <div class="timer-right">
           <div class="logic-buttons">
-            <div class="timer_mode-btn" (click)="timerMode()"><label title="Timer Mode"><i class="fa fa-clock" aria-hidden="true"></i></label></div>
-            <div class="manual_mode-btn" (click)="manualMode()"><label title="Manual Mode"><i class="fas fa-list"></i></label></div>
+            <div class="timer_mode-btn" *ngIf="this.automatic == true" (click)="timerMode()"><label title="Timer Mode"><i class="fa fa-clock" aria-hidden="true"></i></label></div>
+            <div class="manual_mode-btn" *ngIf="this.automatic == true" (click)="manualMode()"><label title="Manual Mode"><i class="fas fa-list"></i></label></div>
+            <div class="timer_mode-btn-2" *ngIf="this.automatic == false" (click)="timerMode()"><label title="Timer Mode"><i class="fa fa-clock" aria-hidden="true"></i></label></div>
+            <div class="manual_mode-btn-2" *ngIf="this.automatic == false" (click)="manualMode()"><label title="Manual Mode"><i class="fas fa-list"></i></label></div>
           </div>
         </div>
       </div>
@@ -78,13 +86,31 @@
       <div class="timer-bottom">
         <div class="chart-selector-wrapper">
           <p></p>
-          <a class="today-btn">TODAY: {{sumTimestampElapsed}}</a>
+          <div class="today-btn"><b>TODAY: {{sumTimestampElapsed}}</b></div>
         </div>
-        <div class="projects-list" *ngFor="let project of projects">
+        <div class="projects-list" *ngFor="let project of projects; let i = index;">
+          <div class="projects-time-container" *ngIf="i == 0 || (i > 0 && this.secondsToDate2(projects[i].dateStart).getDate() !== this.secondsToDate2(projects[i-1].dateStart).getDate())">
+            <div class="time-task">
+              <b>{{this.secondsToDate2(project.dateStart).toLocaleDateString("en-US", { weekday: 'short', month: 'short', day: 'numeric' })}}</b>
+            </div>
+          </div>
           <div class="projects-list-container">
-            <a class="task">{{project.task}}</a>
-            <!--<a class="time">{{secondsToDate(project.hours*3600+project.minutes*60)}}</a>-->
-            <a class="time">hours: {{project.hours}}, minutes: {{project.minutes}}</a>
+            <div class="task">
+              <input class="input3" type="text"
+                     placeholder="{{project.task}}"
+                     [ngModel]="project.task"
+                     (ngModelChange) = "patchProjectTask(project, $event)"
+                     [value]="project.task" class="form-control">
+            </div>
+            <div class="tags-mini">
+              <a class="tags-mini-btn"><i class="fas fa-tag"></i></a>
+            </div>
+            <div class="date">{{this.pad2(this.secondsToDate2(project.dateStart).getHours())}}:{{this.pad2(this.secondsToDate2(project.dateStart).getMinutes())}}
+              - {{this.pad2(this.secondsToDate2(project.dateStop).getHours())}}:{{this.pad2(this.secondsToDate2(project.dateStop).getMinutes())}}
+            </div>
+            <div class="time">{{this.pad2(project.hours)}}:{{this.pad2(project.minutes)}}:00</div>
+            <div class="play-btn" (click)='startTimer2(project)'><i class="fas fa-play"></i></div>
+           <div class="ellipsis" (click)='deleteProject(project)'><label title="Delete"><i class="fas fa-trash-alt"></i></label></div>
           </div>
         </div>
       </div>
