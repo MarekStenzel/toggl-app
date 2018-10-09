@@ -30,7 +30,7 @@ export class TimerComponent implements OnInit, OnChanges {
   task: string;
   automatic = true;
   task_in_progress = false;
-  token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmIyODRmODc4MzRlYzY5ZDM1MTQ4MDAiLCJhY2Nlc3MiOiJhdXRoIiwiaWF0IjoxNTM4ODQ4NzYyfQ.FjMH6dazJ6oo4ac8ThNsTP1XSTKAVybE8SHKjt9juxU';
+  token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1YmIyODRmODc4MzRlYzY5ZDM1MTQ4MDAiLCJhY2Nlc3MiOiJhdXRoIiwiaWF0IjoxNTM5MDc5NDY0fQ.qkpRBazsL1cuttfTCivlyuda3PiWKwajd4QixFMczsc';
 
   constructor(private http: HttpClient) { }
 

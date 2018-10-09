@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpRequest} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpRequest} from '@angular/common/http';
 import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
+import {headersToString} from 'selenium-webdriver/http';
 
 
 @Injectable()
@@ -16,9 +17,6 @@ export class AuthService{
 
   loginUser(email: string, password: string) {
     const user = {email, password};
-    // return this.httpClient.post('http://localhost:3000/users/login', user);
-
-    // const req = new HttpRequest('POST', 'http://localhost:3000/users/login', user, {reportProgress: false, withCredentials: true});
     const req2 = this.httpClient.post('http://localhost:3000/users/login',  user);
     this.loggedIn.next(true);
     return req2;

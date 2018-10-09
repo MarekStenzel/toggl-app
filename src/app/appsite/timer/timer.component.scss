@@ -211,7 +211,8 @@ input:focus {
   border-color: #f3f3f3;
 
   input {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    height: 25px;
   }
 }
 
@@ -232,10 +233,9 @@ input:focus {
     color: #6f6f6f;
   }
   input {
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     background-color: #fafbfc;
-    //background-color: white;
-    height: 38px;
+    height: 25px;
   }
 }
 

@@ -109,7 +109,7 @@
               - {{this.pad2(this.secondsToDate2(project.dateStop).getHours())}}:{{this.pad2(this.secondsToDate2(project.dateStop).getMinutes())}}
             </div>
             <div class="time">{{this.pad2(project.hours)}}:{{this.pad2(project.minutes)}}:00</div>
-            <div class="play-btn" (click)='startTimer2(project)'><i class="fas fa-play"></i></div>
+            <div class="play-btn" (click)='this.task_in_progress === false && startTimer2(project)'><i class="fas fa-play"></i></div>
            <div class="ellipsis" (click)='deleteProject(project)'><label title="Delete"><i class="fas fa-trash-alt"></i></label></div>
           </div>
         </div>
